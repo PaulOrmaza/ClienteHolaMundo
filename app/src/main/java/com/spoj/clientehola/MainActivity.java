@@ -1,12 +1,13 @@
 package com.spoj.clientehola;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONArray;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -15,60 +16,85 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView txtResponse;
-    private Button btnSendRequest;
+    // Referencias a los elementos de la interfaz
+    private TextView txt_respuesta;
+    private Button btn_enviar_solicitud;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Referencias a los elementos de la interfaz
-        txtResponse = findViewById(R.id.txtResponse);
-        btnSendRequest = findViewById(R.id.btnSendRequest);
 
-        // Evento para el botón
-        btnSendRequest.setOnClickListener(new View.OnClickListener() {
+        txt_respuesta = findViewById(R.id.txt_respuesta);
+        btn_enviar_solicitud = findViewById(R.id.btn_enviar_solicitud);
+
+
+        btn_enviar_solicitud.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fetchServerResponse(); // Llama a la función para obtener la respuesta del servidor
+                enviarSolicitud();
             }
         });
     }
 
-    // Función para obtener la respuesta del servidor
-    private void fetchServerResponse() {
-        new Thread(new Runnable() {
+
+    private void enviarSolicitud() {
+
+        Thread hilo = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    // URL del servidor (reemplázala con la URL de tu servidor)
-                    URL url = new URL("http://192.168.137.79:3000");
+                    // 1. Conexión con el servidor
+                    URL url = new URL("http://192.168.137.79:3003/nombre");
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestMethod("GET");
 
-                    // Lee la respuesta
+
+                    // 2. Leer la respuesta del servidor
+                    // BufferedReader para leer la respuesta línea por línea
                     BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                    StringBuilder response = new StringBuilder();
-                    String line;
+                    final StringBuilder respuesta = new StringBuilder(); // Almacena toda la respuesta del servidor
+                    String linea;
 
-                    while ((line = reader.readLine()) != null) {
-                        response.append(line);
+                    // Mientras haya contenido, añadirlo al StringBuilder
+                    while ((linea = reader.readLine()) != null) {
+                        respuesta.append(linea);
+
                     }
-                    reader.close();
+                    reader.close(); // Cerramos el lector después de leer
 
-                    // Actualiza el TextView en el hilo principal
+
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            txtResponse.setText(response.toString());
+                            try {
+                                // Convertir la respuesta en un JSONArray
+                                JSONArray jsonArray = new JSONArray(respuesta.toString());
+
+                                // Construir un texto con los valores del JSONArray
+                                StringBuilder texto = new StringBuilder();
+                                for (int i = 0; i < jsonArray.length(); i++) {
+                                    // Obtener cada objeto del JSON
+                                    texto.append(" ").append(i + 1).append(": ").append(jsonArray.get(i)).append("\n");
+                                }
+
+                                // Mostrar los datos procesados en el TextView
+                                txt_respuesta.setText(texto.toString());
+
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                                Toast.makeText(MainActivity.this, "Error al procesar el JSON", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     });
 
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    e.printStackTrace(); // Imprimir el error en consola para depuración
 
-                    // Muestra un mensaje de error en el hilo principal
+
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -77,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
                     });
                 }
             }
-        }).start();
+        });
+
+        hilo.start();
     }
 }
