@@ -6,65 +6,71 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".MainActivity">
+    tools:context=".MENSAJE">
 
-
+    <!-- Título de la Actividad -->
     <TextView
-        android:id="@+id/txt_titulo1"
+        android:id="@+id/txt_titulo_mensaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:text="Resultado del Servidor"
-        android:textSize="20sp"
-        android:textColor="#1E88E5"
+        android:text="Mensaje del Servidor"
+        android:textColor="#4CAF50"
+        android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Contenedor para la Respuesta -->
+
+    <!-- Botón para Realizar la Solicitud -->
+
+    <!-- Imagen Decorativa -->
 
     <TextView
-        android:id="@+id/txt_respuesta"
+        android:id="@+id/txt_respuesta_mensaje"
         android:layout_width="0dp"
         android:layout_height="150dp"
-        android:layout_marginTop="16dp"
-        android:background="@android:color/holo_blue_light"
+        android:layout_marginTop="72dp"
+        android:background="@android:color/holo_green_light"
         android:elevation="4dp"
         android:gravity="center"
         android:padding="12dp"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_titulo1"
+        app:layout_constraintTop_toBottomOf="@+id/txt_titulo_mensaje"
         app:layout_constraintWidth_percent="0.85" />
 
-
     <Button
-        android:id="@+id/btn_enviar_solicitud"
+        android:id="@+id/btn_solicitar_mensaje"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#1E88E5"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="#4CAF50"
+        android:elevation="6dp"
         android:text="Solicitar"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:elevation="6dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_respuesta" />
-
+        app:layout_constraintTop_toBottomOf="@+id/txt_respuesta_mensaje" />
 
     <ImageView
-        android:id="@+id/img_decorativa"
+        android:id="@+id/img_mensaje"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="48dp"
-        android:src="@android:drawable/ic_menu_info_details"
-        app:tint="#1E88E5"
+        android:layout_marginTop="52dp"
+        android:src="@android:drawable/ic_dialog_email"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_enviar_solicitud" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_solicitar_mensaje"
+        app:tint="#4CAF50" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
