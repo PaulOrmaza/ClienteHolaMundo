@@ -16,16 +16,25 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ISOSCELES"
+            android:exported="false" />
+        <activity
+            android:name=".PENTAGONO"
+            android:exported="false" />
+        <activity
+            android:name=".CIRCULO"
+            android:exported="false" />
+        <activity
+            android:name=".SUMAPARAMETRO"
+            android:exported="false" />
+        <activity
             android:name=".SUMASIMPLE"
             android:exported="false" />
         <activity
             android:name=".MENSAJE"
-            android:exported="false" />
+            android:exported="false" /> <!-- Actividad MENU como la actividad principal -->
         <activity
             android:name=".MENU"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,6 +42,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

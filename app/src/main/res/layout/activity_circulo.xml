@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".CIRCULO">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/txt_titulo_circulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Área y Perímetro del Círculo"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#FF5722"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- EditText para ingresar el radio -->
+    <EditText
+        android:id="@+id/edt_radio"
+        android:layout_width="331dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:hint="Ingrese el radio"
+        android:inputType="numberDecimal"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_titulo_circulo" />
+
+    <!-- Botón para calcular el área y perímetro -->
+    <Button
+        android:id="@+id/btn_calcular_circulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#FF5722"
+        android:text="Calcular"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/edt_radio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- TextViews para mostrar el área y el perímetro -->
+    <TextView
+        android:id="@+id/txt_resultado_area"
+        android:layout_width="123dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="40dp"
+        android:text="Área: "
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_calcular_circulo" />
+
+    <TextView
+        android:id="@+id/txt_resultado_perimetro"
+        android:layout_width="124dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="20dp"
+        android:text="Perímetro: "
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_resultado_area" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -44,6 +44,46 @@ public class MENU extends AppCompatActivity {
             }
         });
 
+        // Botón 4: Suma con Parámetro
+        Button btnSumaParametro = findViewById(R.id.btn_suma_parametro);
+        btnSumaParametro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MENU.this, SUMAPARAMETRO.class);
+                startActivity(intent);
+            }
+        });
+
+        // Botón 5: Círculo (Área y Perímetro)
+        Button btnCirculo = findViewById(R.id.btn_calcular_circulo);
+        btnCirculo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MENU.this, CIRCULO.class);
+                startActivity(intent);
+            }
+        });
+
+        // Botón 6: Pentágono (Área y Perímetro)
+        Button btnPentagono = findViewById(R.id.btn_calcular_pentagono);
+        btnPentagono.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MENU.this, PENTAGONO.class);
+                startActivity(intent);
+            }
+        });
+
+        // Botón 7: Isósceles (Área y Perímetro)
+        Button btnIsosceles = findViewById(R.id.btn_calcular_trapecio);
+        btnIsosceles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MENU.this, ISOSCELES.class);
+                startActivity(intent);
+            }
+        });
+
 
 
     }

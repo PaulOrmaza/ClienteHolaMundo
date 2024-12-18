@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ISOSCELES">
+
+    <!-- Título -->
+
+    <!-- Campo para la base mayor -->
+
+    <!-- Campo para la base menor -->
+
+    <TextView
+        android:id="@+id/txt_titulo_isosceles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Cálculo del Trapecio Isósceles"
+        android:textColor="#FF5722"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edit_base_mayor"
+        android:layout_width="300dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="40dp"
+        android:hint="Base Mayor"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_titulo_isosceles" />
+
+    <EditText
+        android:id="@+id/edit_base_menor"
+        android:layout_width="300dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="32dp"
+        android:hint="Base Menor"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_base_mayor" />
+
+    <!-- Campo para el lado -->
+    <EditText
+        android:id="@+id/edit_lado"
+        android:layout_width="300dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="32dp"
+        android:hint="Lado"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_base_menor" />
+
+    <!-- Campo para la altura -->
+    <EditText
+        android:id="@+id/edit_altura"
+        android:layout_width="300dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="32dp"
+        android:hint="Altura"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_lado" />
+
+    <!-- Botón para calcular -->
+    <Button
+        android:id="@+id/btn_calcular_isosceles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FF5722"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/edit_altura"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <!-- Resultado -->
+    <TextView
+        android:id="@+id/txt_resultado_isosceles"
+        android:layout_width="224dp"
+        android:layout_height="143dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Resultado:"
+        android:textColor="#FF5722"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_calcular_isosceles" />
+</androidx.constraintlayout.widget.ConstraintLayout>

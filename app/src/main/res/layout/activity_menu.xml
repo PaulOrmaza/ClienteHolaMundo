@@ -18,24 +18,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginStart="64dp"
         android:layout_marginTop="24dp"
         android:text="Menú de Servicios"
         android:textColor="#1565C0"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_ver_lista"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="80dp"
-        android:backgroundTint="#64B5F6"
-        android:text="Ver Lista de Nombres"
-        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,10 +38,22 @@
     <!-- Botón: Trapecio (Área y Perímetro) -->
 
     <Button
+        android:id="@+id/btn_ver_lista"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="96dp"
+        android:backgroundTint="#64B5F6"
+        android:text="Ver Lista de Nombres"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/btn_ver_paul"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="168dp"
         android:layout_marginEnd="28dp"
         android:backgroundTint="#64B5F6"
         android:text="Ver Saludo de Paul"
