@@ -84,7 +84,14 @@ public class MENU extends AppCompatActivity {
             }
         });
 
-
+        Button btnTrinomio = findViewById(R.id.btn_Trinomio);
+        btnTrinomio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MENU.this, TRINOMIO.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

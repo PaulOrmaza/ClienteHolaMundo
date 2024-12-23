@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">ClienteHola</string>
+    <string-array name="operadores">
+        <item>+</item>
+        <item>-</item>
+    </string-array>
 </resources>

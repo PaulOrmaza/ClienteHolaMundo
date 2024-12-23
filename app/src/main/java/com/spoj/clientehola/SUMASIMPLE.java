@@ -44,7 +44,7 @@ public class SUMASIMPLE extends AppCompatActivity {
             public void run() {
                 try {
                     // 1. Conexión con el servidor
-                    URL url = new URL("http://192.168.1.22:3003/suma"); // Dirección del servicio /suma
+                    URL url = new URL("http://192.168.137.79:3003/suma"); // Dirección del servicio /suma
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestMethod("GET"); // Método GET
 

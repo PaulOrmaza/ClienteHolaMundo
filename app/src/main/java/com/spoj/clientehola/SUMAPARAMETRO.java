@@ -53,7 +53,7 @@ public class SUMAPARAMETRO extends AppCompatActivity {
             public void run() {
                 try {
                     // 1. Conexión con el servidor usando el número como parámetro en la URL
-                    URL url = new URL("http://192.168.1.22:3003/suma/" + numero); // Usar el número en la URL
+                    URL url = new URL("http://192.168.137.79:3003/suma/" + numero); // Usar el número en la URL
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestMethod("GET"); // Método GET
 

@@ -56,7 +56,7 @@ public class CIRCULO extends AppCompatActivity {
             public void run() {
                 try {
                     // 1. Conexión con el servidor usando el radio como parámetro en la URL
-                    URL url = new URL("http://192.168.1.22:3003/figura/circulo/" + radio); // Usar el radio en la URL
+                    URL url = new URL("http://192.168.137.79:3003/figura/circulo/" + radio); // Usar el radio en la URL
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestMethod("GET"); // Método GET
 

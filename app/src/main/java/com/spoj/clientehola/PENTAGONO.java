@@ -57,7 +57,7 @@ public class PENTAGONO extends AppCompatActivity {
     // Método para obtener los resultados del pentágono desde el servidor
     private void obtenerResultadosPentagono(double lado, double apotema) {
         // Crear la URL con los parámetros
-        String urlString = "http://192.168.1.22:3003/figura/pentagono/" + lado + "/" + apotema;
+        String urlString = "http://192.168.137.79:3003/figura/pentagono/" + lado + "/" + apotema;
 
         // Realizar la solicitud en un hilo secundario para no bloquear la UI
         Thread hilo = new Thread(new Runnable() {

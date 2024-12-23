@@ -64,7 +64,7 @@ public class ISOSCELES extends AppCompatActivity {
     // Método para obtener los resultados del trapecio isósceles desde el servidor
     private void obtenerResultadosIsosceles(double baseMayor, double baseMenor, double lado, double altura) {
         // Crear la URL con los parámetros
-        String urlString = "http://192.168.1.22:3003/figura/trapecio/" + baseMayor + "/" + baseMenor + "/" + lado + "/" + altura;
+        String urlString = "http://192.168.137.79:3003/figura/trapecio/" + baseMayor + "/" + baseMenor + "/" + lado + "/" + altura;
 
         // Realizar la solicitud en un hilo secundario para no bloquear la UI
         Thread hilo = new Thread(new Runnable() {
